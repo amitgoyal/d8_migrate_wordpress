@@ -1,0 +1,42 @@
+id: wp_posts
+label: Wordpress Posts
+migration_groups:
+  - Wordpress
+source:
+  plugin: wp_posts
+process:
+  nid: id
+  vid: id
+  type: type
+#  type:
+#    plugin: default_value
+#    default_value: "article"
+  langcode:
+    plugin: default_value
+    #source: language
+    default_value: "und"
+  title: post_title
+  uid: post_author
+  status:
+    plugin: default_value
+    default_value: 1
+#  created: created
+#  changed: changed
+#  promote: promote
+#  sticky: sticky
+#  'body/format':
+#    plugin: migration
+#    migration: d6_filter_format
+#    source: format
+  'body/value': post_content
+  'body/format': 'basic_html'
+#  'body/summary': teaser
+#  revision_uid: uid
+#  revision_log: log
+#  revision_timestamp: timestamp
+
+#  unmapped d6 fields.
+#  tnid
+
+destination:
+  plugin: entity:node

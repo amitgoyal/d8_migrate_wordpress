@@ -1,0 +1,8 @@
+name: Migrate Wordpress
+description: 'Contains migrations from wordpress blog.'
+package: Migrations
+type: module
+core: 8.x
+dependencies:
+  - migrate
+  - migrate_drupal
