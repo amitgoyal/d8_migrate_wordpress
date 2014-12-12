@@ -5,7 +5,7 @@
  * Contains \Drupal\migrate_wordpress\Plugin\migrate\source\Posts.
  */
 
-namespace Drupal\migrate_wordpress\Plugin\migrate\source\wp;
+namespace Drupal\migrate_wordpress\Plugin\migrate\source;
 
 use Drupal\migrate\Row;
 use Drupal\migrate\Plugin\SourceEntityInterface;
@@ -15,7 +15,7 @@ use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
  * Wordpress posts source from database.
  *
  * @MigrateSource(
- *   id = "wp_posts"
+ *   id = "posts"
  * )
  */
 class Posts extends DrupalSqlBase implements SourceEntityInterface {

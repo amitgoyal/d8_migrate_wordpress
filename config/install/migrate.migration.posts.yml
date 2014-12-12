@@ -1,9 +1,11 @@
-id: wp_posts
+id: posts
 label: Wordpress Posts
 migration_groups:
   - Wordpress
 source:
-  plugin: wp_posts
+  plugin: posts
+destination:
+  plugin: entity:node
 process:
   nid: id
   vid: id
@@ -37,6 +39,3 @@ process:
 
 #  unmapped d6 fields.
 #  tnid
-
-destination:
-  plugin: entity:node

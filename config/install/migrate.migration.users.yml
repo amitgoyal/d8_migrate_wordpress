@@ -1,0 +1,43 @@
+id: users
+label: Wordpress Users
+migration_groups:
+  - Wordpress
+source:
+  plugin: users
+destination:
+  plugin: entity:user
+process:
+  uid: id
+  name: user_login
+  pass: user_pass
+  mail: user_email
+  status:
+    -
+     plugin: default_value
+     default_value: 1
+  created:
+    -
+     plugin: callback
+     callable: strtotime
+     source: user_registered
+#  access: access
+#  login: login
+#  timezone: timezone
+#  langcode: language
+#  picture: picture
+#  preferred_langcode: language
+#  preferred_admin_langcode: language
+#  init: init
+#  field_first_name: first_name
+#  field_last_name: last_name
+#  'field_biography/value': biography
+#  'field_biography/format': 'plain_text'
+#  'field_biography/format':
+#    plugin: static_map
+#    bypass: true
+#    source: biography_format
+#    map:
+#    1: plain_text
+#    2: basc_html
+#    3: full_html
+#    4: full_html

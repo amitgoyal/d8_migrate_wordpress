@@ -6,6 +6,6 @@
  * Cleans up config entities installed by this module.
  */
 function migrate_wordpress_uninstall() {
-  db_query("DELETE FROM {config} WHERE name LIKE '%migrate.migration.wp%'");
+  db_query("DELETE FROM {config} WHERE name LIKE '%migrate.migration.%'");
   drupal_flush_all_caches();
 }
