@@ -1,0 +1,62 @@
+id: comments
+label: Wordpress Comments
+migration_groups:
+  - Wordpress
+source:
+  plugin: comments
+destination:
+  plugin: entity:comment
+process:
+  cid: comment_ID
+  pid:
+    -
+      plugin: skip_process_on_empty
+      source: comment_parent
+    -
+      plugin: migration
+      migration: comments
+  langcode:
+    plugin: default_value
+    default_value: "en"
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  comment_type:
+    plugin: default_value
+    default_value: "comment"
+  field_name:
+    plugin: default_value
+    default_value: "comment"
+  uid:
+    -
+      plugin: skip_process_on_empty
+      source: user_id
+    -
+      plugin: migration
+      migration: users
+  name: comment_author
+  mail: comment_author_email
+  homepage: comment_author_url
+  hostname: comment_author_IP
+  'comment_body/value': comment_content
+  'comment_body/format': 'basic_html'
+  created:
+    -
+     plugin: callback
+     callable: strtotime
+     source: comment_date
+  status:
+    plugin: default_value
+    default_value: 1
+  uid:
+    plugin: default_value
+    default_value: 0
+  entity_id:
+    plugin: migration
+    migration: posts
+    source: comment_post_ID
+  entity_type: 'node'
+migration_dependencies:
+  required:
+    - posts
+    - users

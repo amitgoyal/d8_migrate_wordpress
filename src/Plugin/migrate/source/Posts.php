@@ -60,7 +60,7 @@ class Posts extends DrupalSqlBase implements SourceEntityInterface {
     $type = $post_type == 'page' ? 'page' : 'article';
     $row->setSourceProperty('type', $type);
 
-    //return parent::prepareRow($row);
+    return parent::prepareRow($row);
   }
 
   /**
