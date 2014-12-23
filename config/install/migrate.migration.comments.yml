@@ -4,6 +4,8 @@ migration_groups:
   - Wordpress
 source:
   plugin: comments
+  constants:
+    entity_type: node
 destination:
   plugin: entity:comment
 process:
@@ -55,7 +57,7 @@ process:
     plugin: migration
     migration: posts
     source: comment_post_ID
-  entity_type: 'node'
+  entity_type: 'constants/entity_type'
 migration_dependencies:
   required:
     - posts
