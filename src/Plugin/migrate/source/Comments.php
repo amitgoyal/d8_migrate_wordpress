@@ -26,16 +26,19 @@ class Comments extends DrupalSqlBase implements SourceEntityInterface {
   public function query() {
     // Select approved comments.
     $query = $this->select('wp_comments', 'c')
-      ->fields('c', array('comment_ID', 'comment_post_ID', 'comment_author_email', 'comment_author_url', 'comment_author_IP', 'comment_date', 'comment_content', 'comment_approved', 'comment_parent', 'user_id'))
+      ->fields('c', array_keys($this->commentFields()))
       ->condition('comment_approved', '1', '=');
 
     return $query;
   }
 
   /**
-   * {@inheritdoc}
+   * Returns the Comments fields to be migrated.
+   *
+   * @return array
+   *   Associative array having field name as key and description as value.
    */
-  public function fields() {
+  protected function commentFields() {
     $fields = array(
       'comment_ID' => $this->t('Comment ID'),
       'comment_post_ID' => $this->t('Comment post ID'),
@@ -47,7 +50,7 @@ class Comments extends DrupalSqlBase implements SourceEntityInterface {
       'comment_content' => $this->t('Comment body'),
       'comment_approved' => $this->t('Comment approved'),
       'comment_parent' => $this->t('Comment parent'),
-      'user_id' => $this->t('Authored by (uid)'),
+      'user_id' => $this->t('Authored by'),
     );
     return $fields;
   }
@@ -55,20 +58,9 @@ class Comments extends DrupalSqlBase implements SourceEntityInterface {
   /**
    * {@inheritdoc}
    */
-  //public function prepareRow(Row $row) {
-    //return parent::prepareRow($row);
-  //}
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getIds() {
-    return array(
-      'comment_ID' => array(
-        'type' => 'integer',
-        'alias' => 'c',
-      ),
-    );
+  public function fields() {
+    $fields = $this->commentFields();
+    return $fields;
   }
 
   /**
@@ -83,6 +75,18 @@ class Comments extends DrupalSqlBase implements SourceEntityInterface {
    */
   public function entityTypeId() {
     return 'comment';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getIds() {
+    return array(
+      'comment_ID' => array(
+        'type' => 'integer',
+        'alias' => 'c',
+      ),
+    );
   }
 
 }
