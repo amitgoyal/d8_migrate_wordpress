@@ -28,7 +28,7 @@ class Users extends DrupalSqlBase implements SourceEntityInterface {
   }
 
   /**
-   * Returns the user base fields to be migrated.
+   * Returns the User fields to be migrated.
    *
    * @return array
    *   Associative array having field name as key and description as value.
@@ -49,6 +49,7 @@ class Users extends DrupalSqlBase implements SourceEntityInterface {
    */
   public function fields() {
     $fields = $this->userFields();
+    return $fields;
   }
 
   /**

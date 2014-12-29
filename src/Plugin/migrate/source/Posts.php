@@ -12,7 +12,7 @@ use Drupal\migrate\Plugin\SourceEntityInterface;
 use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
 
 /**
- * Wordpress posts source from database.
+ * Extracts posts from Wordpress database.
  *
  * @MigrateSource(
  *   id = "posts"
@@ -26,22 +26,19 @@ class Posts extends DrupalSqlBase implements SourceEntityInterface {
   public function query() {
     // Select published posts.
     $query = $this->select('wp_posts', 'p')
-      ->fields('p', array('id', 'post_title', 'post_content', 'post_author', 'post_type'))
+      ->fields('p', array_keys($this->postFields()))
       ->condition('post_status', 'publish', '=');
-
-    //$query->condition('post_status', 'publish');
-
-    if (isset($this->configuration['post_type'])) {
-      $query->condition('post_type', $this->configuration['post_type']);
-    }
 
     return $query;
   }
 
   /**
-   * {@inheritdoc}
+   * Returns the Posts fields to be migrated.
+   *
+   * @return array
+   *   Associative array having field name as key and description as value.
    */
-  public function fields() {
+  protected function postFields() {
     $fields = array(
       'id' => $this->t('Post ID'),
       'post_title' => $this->t('Title'),
@@ -49,6 +46,14 @@ class Posts extends DrupalSqlBase implements SourceEntityInterface {
       'post_author' => $this->t('Authored by (uid)'),
       'post_type' => $this->t('Post type'),
     );
+    return $fields;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function fields() {
+    $fields = $this->postFields();
     return $fields;
   }
 
@@ -66,18 +71,6 @@ class Posts extends DrupalSqlBase implements SourceEntityInterface {
   /**
    * {@inheritdoc}
    */
-  public function getIds() {
-    return array(
-      'id' => array(
-        'type' => 'integer',
-        'alias' => 'p',
-      ),
-    );
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function bundleMigrationRequired() {
     return FALSE;
   }
@@ -87,6 +80,18 @@ class Posts extends DrupalSqlBase implements SourceEntityInterface {
    */
   public function entityTypeId() {
     return 'node';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getIds() {
+    return array(
+      'id' => array(
+        'type' => 'integer',
+        'alias' => 'p',
+      ),
+    );
   }
 
 }
