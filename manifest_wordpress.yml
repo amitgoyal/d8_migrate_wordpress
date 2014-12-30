@@ -1,0 +1,7 @@
+# A Wordpress posts/users/comments migration, with dependencies.
+- posts
+- users
+- comments
+- vocabulary
+- terms
+
