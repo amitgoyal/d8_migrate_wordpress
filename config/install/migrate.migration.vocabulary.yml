@@ -1,0 +1,20 @@
+id: vocabulary
+label: Wordpress vocabularies
+migration_groups:
+  - Wordpress
+source:
+  plugin: vocabulary
+process:
+  vid:
+    -
+      plugin: machine_name
+      source: taxonomy
+    -
+      plugin: dedupe_entity
+      entity_type: taxonomy_vocabulary
+      field: vid
+      length: 32
+  label: label
+  name: label
+destination:
+  plugin: entity:taxonomy_vocabulary
