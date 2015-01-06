@@ -11,7 +11,7 @@ use Drupal\migrate\Plugin\SourceEntityInterface;
 use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
 
 /**
- * Extracts users from Wordpress database.
+ * Extract users from Wordpress database.
  *
  * @MigrateSource(
  *   id = "users"

@@ -10,7 +10,7 @@ use Drupal\migrate\Row;
 use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
 
 /**
- * Extracts users from Wordpress database.
+ * Extract terms from Wordpress database.
  *
  * @MigrateSource(
  *   id = "terms"

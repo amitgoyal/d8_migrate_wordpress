@@ -12,7 +12,7 @@ use Drupal\migrate\Plugin\SourceEntityInterface;
 use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
 
 /**
- * Wordpress posts source from database.
+ * Extract comments from Wordpress database.
  *
  * @MigrateSource(
  *   id = "comments"

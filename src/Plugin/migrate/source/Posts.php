@@ -12,7 +12,7 @@ use Drupal\migrate\Plugin\SourceEntityInterface;
 use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
 
 /**
- * Extracts posts from Wordpress database.
+ * Extract posts from Wordpress database.
  *
  * @MigrateSource(
  *   id = "posts"
