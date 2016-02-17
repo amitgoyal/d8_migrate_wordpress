@@ -1,4 +1,4 @@
-id: posts
+id: wp_posts
 label: Wordpress Posts
 migration_group: wordpress
 source:

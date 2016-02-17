@@ -1,4 +1,4 @@
-id: comments
+id: wp_comments
 label: Wordpress Comments
 migration_group: wordpress
 source:

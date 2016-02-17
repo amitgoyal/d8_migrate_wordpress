@@ -1,4 +1,4 @@
-id: vocabulary
+id: wp_vocabulary
 label: Wordpress vocabularies
 migration_group: wordpress
 source:

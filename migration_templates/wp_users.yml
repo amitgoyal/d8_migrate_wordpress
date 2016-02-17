@@ -1,4 +1,4 @@
-id: users
+id: wp_users
 label: Wordpress Users
 migration_tags:
   - Wordpress

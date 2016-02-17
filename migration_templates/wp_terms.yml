@@ -1,4 +1,4 @@
-id: terms
+id: wp_terms
 label: Wordpress terms
 migration_group: wordpress
 source:
