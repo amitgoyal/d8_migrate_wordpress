@@ -1,6 +1,6 @@
 # A Wordpress posts/users/comments migration, with dependencies.
-- wp_posts
 - wp_users
-- wp_comments
 - wp_vocabulary
 - wp_terms
+- wp_posts
+- wp_comments

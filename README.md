@@ -5,14 +5,16 @@ To do the Wordpress to Drupal 8 migration, you should have Wordpress site databa
 You can use the following 'migrate-manifest' drush command from Drupal 8 root to do the migration.
 
 ```bash
-drush migrate-manifest manifest_wordpress.yml --legacy-db-url=mysql://{dbuser}:{dbpass}@localhost/{dbname}
+drush migrate-manifest modules/contrib/migrate_wordpress/manifest_wordpress.yml --legacy-db-url=mysql://{dbuser}:{dbpass}@localhost/{dbname}
 ```
 
 
 The manifest_wordpress.yml file contains IDs of each migration Entity. Here is the one used for migration,
 
 ```
-- posts
-- users
-- comments
+- wp_users
+- wp_vocabulary
+- wp_terms
+- wp_posts
+- wp_comments
 ```

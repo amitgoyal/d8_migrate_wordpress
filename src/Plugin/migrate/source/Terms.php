@@ -59,10 +59,12 @@ class Terms extends SqlBase {
       ->execute()
       ->fetchAssoc();
 
-    $row->setSourceProperty('parent', $query['parent']);
-    $row->setSourceProperty('description', $query['description']);
-    $row->setSourceProperty('vid', $query['taxonomy']);
-    
+    if (!empty($query)) {
+      $row->setSourceProperty('parent', $query['parent']);
+      $row->setSourceProperty('description', $query['description']);
+      $row->setSourceProperty('vid', $query['taxonomy']);
+    }
+
     return parent::prepareRow($row);
   }
 

@@ -1,5 +1,7 @@
 id: wp_comments
 label: Wordpress Comments
+migration_tags:
+  - Wordpress
 migration_group: wordpress
 source:
   plugin: comments
@@ -10,12 +12,9 @@ destination:
 process:
   cid: comment_ID
   pid:
-    -
-      plugin: skip_process_on_empty
-      source: comment_parent
-    -
-      plugin: migration
-      migration: comments
+    plugin: migration
+    migration: wp_comments
+    source: comment_parent
   langcode:
     plugin: default_value
     default_value: "en"
@@ -29,12 +28,9 @@ process:
     plugin: default_value
     default_value: "comment"
   uid:
-    -
-      plugin: skip_process_on_empty
-      source: user_id
-    -
-      plugin: migration
-      migration: users
+    plugin: migration
+    migration: wp_users
+    source: user_id
   name: comment_author
   mail: comment_author_email
   homepage: comment_author_url
@@ -54,10 +50,10 @@ process:
     default_value: 0
   entity_id:
     plugin: migration
-    migration: posts
+    migration: wp_posts
     source: comment_post_ID
   entity_type: 'constants/entity_type'
 migration_dependencies:
   required:
-    - posts
-    - users
+    - wp_posts
+    - wp_users

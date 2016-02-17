@@ -1,5 +1,7 @@
 id: wp_vocabulary
 label: Wordpress vocabularies
+migration_tags:
+  - Wordpress
 migration_group: wordpress
 source:
   plugin: vocabulary

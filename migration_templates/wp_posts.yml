@@ -1,5 +1,7 @@
 id: wp_posts
 label: Wordpress Posts
+migration_tags:
+  - Wordpress
 migration_group: wordpress
 source:
   plugin: posts
@@ -19,3 +21,7 @@ process:
     default_value: 1
   'body/value': post_content
   'body/format': 'basic_html'
+migration_dependencies:
+  required:
+    - wp_terms
+    - wp_users

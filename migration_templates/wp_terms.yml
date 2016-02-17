@@ -1,5 +1,7 @@
 id: wp_terms
 label: Wordpress terms
+migration_tags:
+  - Wordpress
 migration_group: wordpress
 source:
   plugin: terms
@@ -7,20 +9,17 @@ process:
   tid: term_id
   vid:
     plugin: migration
-    migration: vocabulary
+    migration: wp_vocabulary
     source: vid
   name: name
   description: description
   weight: 0
   parent:
-    -
-      plugin: skip_process_on_empty
-      source: parent
-    -
       plugin: migration
-      migration: terms
+      migration: wp_terms
+      source: parent
 destination:
   plugin: entity:taxonomy_term
 migration_dependencies:
   required:
-    - vocabulary
+    - wp_vocabulary
