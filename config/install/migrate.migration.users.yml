@@ -1,7 +1,8 @@
 id: users
 label: Wordpress Users
-migration_groups:
+migration_tags:
   - Wordpress
+migration_group: wordpress
 source:
   plugin: users
 destination:

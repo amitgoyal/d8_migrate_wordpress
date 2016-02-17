@@ -7,8 +7,7 @@
 namespace Drupal\migrate_wordpress\Plugin\migrate\source;
 
 use Drupal\migrate\Row;
-use Drupal\migrate\Plugin\SourceEntityInterface;
-use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
+use Drupal\migrate\Plugin\migrate\source\SqlBase;
 
 /**
  * Extract users from Wordpress database.
@@ -17,7 +16,7 @@ use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
  *   id = "users"
  * )
  */
-class Users extends DrupalSqlBase implements SourceEntityInterface {
+class Users extends SqlBase {
 
   /**
    * {@inheritdoc}

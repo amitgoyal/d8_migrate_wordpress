@@ -8,8 +8,7 @@
 namespace Drupal\migrate_wordpress\Plugin\migrate\source;
 
 use Drupal\migrate\Row;
-use Drupal\migrate\Plugin\SourceEntityInterface;
-use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
+use Drupal\migrate\Plugin\migrate\source\SqlBase;
 
 /**
  * Extract posts from Wordpress database.
@@ -18,7 +17,7 @@ use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
  *   id = "posts"
  * )
  */
-class Posts extends DrupalSqlBase implements SourceEntityInterface {
+class Posts extends SqlBase {
 
   /**
    * {@inheritdoc}

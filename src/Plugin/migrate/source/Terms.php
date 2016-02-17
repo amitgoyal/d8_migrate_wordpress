@@ -7,7 +7,7 @@
 namespace Drupal\migrate_wordpress\Plugin\migrate\source;
 
 use Drupal\migrate\Row;
-use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
+use Drupal\migrate\Plugin\migrate\source\SqlBase;
 
 /**
  * Extract terms from Wordpress database.
@@ -16,7 +16,7 @@ use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
  *   id = "terms"
  * )
  */
-class Terms extends DrupalSqlBase {
+class Terms extends SqlBase {
 
   /**
    * {@inheritdoc}

@@ -1,7 +1,6 @@
 id: comments
 label: Wordpress Comments
-migration_groups:
-  - Wordpress
+migration_group: wordpress
 source:
   plugin: comments
   constants:

@@ -1,7 +1,6 @@
 id: terms
 label: Wordpress terms
-migration_groups:
-  - Wordpress
+migration_group: wordpress
 source:
   plugin: terms
 process:

@@ -1,7 +1,6 @@
 id: vocabulary
 label: Wordpress vocabularies
-migration_groups:
-  - Wordpress
+migration_group: wordpress
 source:
   plugin: vocabulary
 process:

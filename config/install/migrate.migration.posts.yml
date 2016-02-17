@@ -1,7 +1,6 @@
 id: posts
 label: Wordpress Posts
-migration_groups:
-  - Wordpress
+migration_group: wordpress
 source:
   plugin: posts
 destination:
