@@ -19,7 +19,7 @@ class Posts extends SqlBase {
    */
   public function query() {
     // Select published posts.
-    $query = $this->select('wp_posts', 'p')
+    $query = $this->select('posts', 'p')
       ->fields('p', array_keys($this->postFields()))
       ->condition('post_status', 'publish', '=');
 

@@ -18,8 +18,8 @@ class Terms extends SqlBase {
    * {@inheritdoc}
    */
   public function query() {
-    return $this->select('wp_terms', 'wpt')
-      ->fields('wpt', array_keys($this->termsFields()));
+    return $this->select('terms', 't')
+      ->fields('t', array_keys($this->termsFields()));
   }
 
   /**
@@ -49,8 +49,8 @@ class Terms extends SqlBase {
    */
   public function prepareRow(Row $row) {
     // Find parents for this row.
-    $query = $this->select('wp_term_taxonomy', 'wptt')
-      ->fields('wptt', array('parent', 'term_id', 'taxonomy', 'description'))
+    $query = $this->select('term_taxonomy', 'tt')
+      ->fields('tt', array('parent', 'term_id', 'taxonomy', 'description'))
       ->condition('term_id', $row->getSourceProperty('term_id'))
       ->execute()
       ->fetchAssoc();
@@ -78,7 +78,7 @@ class Terms extends SqlBase {
     return array(
       'term_id' => array(
         'type' => 'integer',
-        'alias' => 'wpt',
+        'alias' => 't',
       ),
     );
   }
