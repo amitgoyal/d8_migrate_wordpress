@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\migrate_wordpress\Plugin\migrate\source\Users.
- */
 
 namespace Drupal\migrate_wordpress\Plugin\migrate\source;
 

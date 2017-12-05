@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\migrate_wordpress\Plugin\migrate\source\Vocabulary.
- */
 
 namespace Drupal\migrate_wordpress\Plugin\migrate\source;
 

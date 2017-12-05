@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Install, update, and uninstall functions for the WP Migrate module.
+ */
+
+/**
  * Implements hook_uninstall().
  *
  * Cleans up config entities installed by this module.

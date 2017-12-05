@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\migrate_wordpress\Plugin\migrate\source\Terms.
- */
 
 namespace Drupal\migrate_wordpress\Plugin\migrate\source;
 
