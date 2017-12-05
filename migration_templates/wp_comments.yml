@@ -36,7 +36,9 @@ process:
   homepage: comment_author_url
   hostname: comment_author_IP
   'comment_body/value': comment_content
-  'comment_body/format': 'basic_html'
+  'comment_body/format':
+    plugin: default_value
+    default_value: basic_html
   created:
     -
      plugin: callback

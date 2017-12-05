@@ -20,7 +20,9 @@ process:
     plugin: default_value
     default_value: 1
   'body/value': post_content
-  'body/format': 'basic_html'
+  'body/format':
+    plugin: default_value
+    default_value: basic_html
 migration_dependencies:
   required:
     - wp_terms
