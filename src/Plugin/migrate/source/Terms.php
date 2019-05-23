@@ -29,10 +29,10 @@ class Terms extends SqlBase {
    *   Associative array having field name as key and description as value.
    */
   protected function termsFields() {
-    $fields = array(
+    $fields = [
       'term_id' => $this->t('The term ID.'),
       'name' => $this->t('The name of the term.'),
-    );
+    ];
     return $fields;
   }
 
@@ -50,7 +50,7 @@ class Terms extends SqlBase {
   public function prepareRow(Row $row) {
     // Find parents for this row.
     $query = $this->select('term_taxonomy', 'tt')
-      ->fields('tt', array('parent', 'term_id', 'taxonomy', 'description'))
+      ->fields('tt', ['parent', 'term_id', 'taxonomy', 'description'])
       ->condition('term_id', $row->getSourceProperty('term_id'))
       ->execute()
       ->fetchAssoc();
@@ -68,19 +68,19 @@ class Terms extends SqlBase {
    * {@inheritdoc}
    */
   public function bundleMigrationRequired() {
-    return false;
+    return FALSE;
   }
 
   /**
    * {@inheritdoc}
    */
   public function getIds() {
-    return array(
-      'term_id' => array(
+    return [
+      'term_id' => [
         'type' => 'integer',
         'alias' => 't',
-      ),
-    );
+      ],
+    ];
   }
 
 }

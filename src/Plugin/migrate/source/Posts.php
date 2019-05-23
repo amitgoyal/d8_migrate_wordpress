@@ -33,13 +33,13 @@ class Posts extends SqlBase {
    *   Associative array having field name as key and description as value.
    */
   protected function postFields() {
-    $fields = array(
+    $fields = [
       'id' => $this->t('Post ID'),
       'post_title' => $this->t('Title'),
       'post_content' => $this->t('Content'),
       'post_author' => $this->t('Authored by (uid)'),
       'post_type' => $this->t('Post type'),
-    );
+    ];
     return $fields;
   }
 
@@ -80,12 +80,12 @@ class Posts extends SqlBase {
    * {@inheritdoc}
    */
   public function getIds() {
-    return array(
-      'id' => array(
+    return [
+      'id' => [
         'type' => 'integer',
         'alias' => 'p',
-      ),
-    );
+      ],
+    ];
   }
 
 }

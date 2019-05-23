@@ -30,9 +30,9 @@ class Vocabulary extends SqlBase {
    *   Associative array having field name as key and description as value.
    */
   protected function vocabFields() {
-    $fields = array(
+    $fields = [
       'taxonomy' => $this->t('Vocabulary'),
-    );
+    ];
     return $fields;
   }
 
@@ -59,7 +59,7 @@ class Vocabulary extends SqlBase {
    * {@inheritdoc}
    */
   public function bundleMigrationRequired() {
-    return false;
+    return FALSE;
   }
 
   /**
@@ -73,12 +73,12 @@ class Vocabulary extends SqlBase {
    * {@inheritdoc}
    */
   public function getIds() {
-    return array(
-      'taxonomy' => array(
+    return [
+      'taxonomy' => [
         'type' => 'string',
         'alias' => 'v',
-      ),
-    );
+      ],
+    ];
   }
 
 }

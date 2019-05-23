@@ -2,7 +2,6 @@
 
 namespace Drupal\migrate_wordpress\Plugin\migrate\source;
 
-use Drupal\migrate\Row;
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 
 /**
@@ -29,13 +28,13 @@ class Users extends SqlBase {
    *   Associative array having field name as key and description as value.
    */
   protected function userFields() {
-    $fields = array(
+    $fields = [
       'id' => $this->t('User ID'),
       'user_login' => $this->t('Username'),
       'user_pass' => $this->t('Password'),
       'user_email' => $this->t('Email address'),
       'user_registered' => $this->t('Created time'),
-    );
+    ];
     return $fields;
   }
 
@@ -51,7 +50,7 @@ class Users extends SqlBase {
    * {@inheritdoc}
    */
   public function bundleMigrationRequired() {
-    return false;
+    return FALSE;
   }
 
   /**
@@ -65,12 +64,12 @@ class Users extends SqlBase {
    * {@inheritdoc}
    */
   public function getIds() {
-    return array(
-      'id' => array(
+    return [
+      'id' => [
         'type' => 'integer',
         'alias' => 'u',
-      ),
-    );
+      ],
+    ];
   }
 
 }

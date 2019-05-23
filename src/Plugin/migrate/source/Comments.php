@@ -2,7 +2,6 @@
 
 namespace Drupal\migrate_wordpress\Plugin\migrate\source;
 
-use Drupal\migrate\Row;
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 
 /**
@@ -33,7 +32,7 @@ class Comments extends SqlBase {
    *   Associative array having field name as key and description as value.
    */
   protected function commentFields() {
-    $fields = array(
+    $fields = [
       'comment_ID' => $this->t('Comment ID'),
       'comment_post_ID' => $this->t('Comment post ID'),
       'comment_author' => $this->t('Comment author'),
@@ -45,7 +44,7 @@ class Comments extends SqlBase {
       'comment_approved' => $this->t('Comment approved'),
       'comment_parent' => $this->t('Comment parent'),
       'user_id' => $this->t('Authored by'),
-    );
+    ];
     return $fields;
   }
 
@@ -75,12 +74,12 @@ class Comments extends SqlBase {
    * {@inheritdoc}
    */
   public function getIds() {
-    return array(
-      'comment_ID' => array(
+    return [
+      'comment_ID' => [
         'type' => 'integer',
         'alias' => 'c',
-      ),
-    );
+      ],
+    ];
   }
 
 }
