@@ -12,12 +12,14 @@ process:
   name: user_login
   pass: user_pass
   mail: user_email
+  init: user_email
   status:
-    -
-     plugin: default_value
-     default_value: 1
+    plugin: default_value
+    default_value: 1
   created:
-    -
-     plugin: callback
-     callable: strtotime
-     source: user_registered
+    plugin: callback
+    callable: strtotime
+    source: user_registered
+  changed: '@created'
+  access: '@created'
+  login: '@created'

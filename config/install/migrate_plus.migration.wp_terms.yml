@@ -15,9 +15,10 @@ process:
   description: description
   weight: 0
   parent:
-      plugin: migration
-      migration: wp_terms
-      source: parent
+    plugin: migration_lookup
+    migration: wp_terms
+    no_stub: true
+    source: parent
 destination:
   plugin: entity:taxonomy_term
 migration_dependencies:
