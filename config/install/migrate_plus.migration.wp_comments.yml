@@ -12,7 +12,7 @@ destination:
 process:
   cid: comment_ID
   pid:
-    plugin: migration
+    plugin: migration_lookup
     migration: wp_comments
     source: comment_parent
   langcode:
@@ -28,7 +28,7 @@ process:
     plugin: default_value
     default_value: "comment"
   uid:
-    plugin: migration
+    plugin: migration_lookup
     migration: wp_users
     source: user_id
   name: comment_author
