@@ -14,6 +14,7 @@ process:
   pid:
     plugin: migration_lookup
     migration: wp_comments
+    no_stub: true
     source: comment_parent
   langcode:
     plugin: default_value
@@ -30,6 +31,7 @@ process:
   uid:
     plugin: migration_lookup
     migration: wp_users
+    no_stub: true
     source: user_id
   name: comment_author
   mail: comment_author_email
@@ -53,6 +55,7 @@ process:
   entity_id:
     plugin: migration
     migration: wp_posts
+    no_stub: true
     source: comment_post_ID
   entity_type: 'constants/entity_type'
 migration_dependencies:
